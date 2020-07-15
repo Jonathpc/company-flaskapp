@@ -178,7 +178,7 @@ first we create the file
 ```bash
 sudo nano /etc/systemd/system/app.service
 ```
-And copy the following. You should use <yourusername>
+And copy the following. You should use **yourusername**
 
 ```bash
 [Unit]
@@ -237,7 +237,7 @@ We need to create a new server block in Nginx's sites-available.
 ```bash
 sudo nano /etc/nginx/sites-available/app
 ```
-And copy the following. You should use <yourusername> and your domain
+And copy the following. You should use **yourusername** and **your_domain**
 ```bash
 server {
     listen 80;
