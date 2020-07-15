@@ -124,12 +124,12 @@ app
 We are going to clone the repo, make sure you are in home directory
 
 ```bash
-git clone https://github.com/Jonathpc/flaskapp.git
+git clone https://github.com/Jonathpc/company-flaskapp.git
 ```
 We need to rename the parent folder to app
 
 ```bash
-mv flaskapp/ app
+mv company-flaskapp/ app
 ```
 Now we are going to create a vitual environment inside the app folder
 
