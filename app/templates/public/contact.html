@@ -1,0 +1,31 @@
+{% extends "public/layout.html" %}
+
+{% block title %}
+  Contact
+{% endblock %}
+
+{% block main %}
+
+<div class="col-lg-8 mt-5 mt-lg-0">
+
+    <form method="POST" action="/contact">
+        <div class="form-row">
+            {{ form.hidden_tag() }}
+            <div class="col-md-6 form-group">
+                <div>{{ form.name.label }} {{ form.name }}</div>
+            </div>
+            <div class="col-md-6 form-group">
+                <div>{{ form.email.label }} {{ form.email }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div>{{ form.subject.label }} {{ form.subject }}</div>
+        </div>
+        <div class="form-group">
+            <div>{{ form.body.label }} {{ form.body }}</div>
+        </div>
+        <div class="text-center">{{ form.recaptcha }}</div>
+        <div class="text-center">{{ form.submit }}</div>
+    </form>
+</div>
+{% endblock %}
