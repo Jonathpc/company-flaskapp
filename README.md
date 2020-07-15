@@ -111,7 +111,6 @@ app
 │   │       └── contact.html
 │   ├── static
 │   │   ├── css
-│   │   ├── public
 │   │   ├── js
 │   │   └── img
 │   ├── forms.py
