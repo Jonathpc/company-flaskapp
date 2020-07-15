@@ -19,33 +19,18 @@ def contact():
     MAIL_PASS = request.environ['MAIL_PASS']
     if form.validate_on_submit():
         sender = "%s <%s>" % (form.name.data, form.email.data)
-        subject = "Asunto: %s, %s" % (form.subject.data , form.email.data)
+        subject = "Subject: %s, %s" % (form.subject.data , form.email.data)
         message = "From: %s, \n\n %s, \n\n %s" % (
             sender, subject, form.body.data)
 
         server = smtplib.SMTP("smtp.gmail.com", 587)
         server.starttls()
-        server.login("webpuppys@gmail.com", MAIL_PASS)
-        server.sendmail("webpuppys@gmail.com",
-                        "innovacionespuppys@hotmail.com", message.encode('utf-8'))
+        server.login("sender_mail", MAIL_PASS)
+        server.sendmail("sender_mail",
+                        "receiver_mail", message.encode('utf-8'))
 
-        flash("Tu mensaje ha sido enviado")
+        flash("Your message was sent")
         return redirect("/contact")
     else:
         flash_errors(form)
     return render_template("public/contact.html", form=form)
-
-@app.route("/about")
-def about():
-
-    return render_template("public/about.html")
-
-@app.route("/products")
-def products():
-
-    return render_template("public/products.html")
-
-@app.route("/services")
-def services():
-
-    return render_template("public/services.html")
